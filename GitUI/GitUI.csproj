@@ -1949,6 +1949,7 @@
     <Content Include="Resources\Icons\IconKey.png" />
     <Content Include="Resources\Icons\IconManageRemotes.png" />
     <Content Include="Resources\Icons\IconMerge.png" />
+    <Content Include="Resources\Icons\IconMergeFFOnly.png" />
     <Content Include="Resources\Icons\IconRebase.png" />
     <Content Include="Resources\Icons\IconSaveAs.png" />
     <Content Include="Resources\Icons\IconSubmoduleAdded.png" />

@@ -332,7 +332,7 @@ namespace GitUI.CommandsDialogs
             // MergeFFOnly
             // 
             this.MergeFFOnly.AutoSize = true;
-            this.MergeFFOnly.Image = global::GitUI.Properties.Resources.IconMerge;
+            this.MergeFFOnly.Image = global::GitUI.Properties.Resources.IconMergeFFOnly;
             this.MergeFFOnly.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MergeFFOnly.Location = new System.Drawing.Point(3, 28);
             this.MergeFFOnly.Name = "MergeFFOnly";
