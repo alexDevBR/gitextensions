@@ -1714,6 +1714,16 @@ namespace GitUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PullMergeFFOnly {
+            get {
+                object obj = ResourceManager.GetObject("PullMergeFFOnly", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PullRebase {
             get {
                 object obj = ResourceManager.GetObject("PullRebase", resourceCulture);
