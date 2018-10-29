@@ -100,20 +100,25 @@ namespace GitCommandsTests.Git
 
             {
                 // Pull doesn't accept a local branch ever
-                var fetchCmd = module.PullCmd("origin", "some-branch", false).Arguments;
+                var fetchCmd = module.PullCmd("origin", "some-branch", false, false).Arguments;
                 Assert.AreEqual("pull --progress \"origin\" +some-branch --no-tags", fetchCmd);
             }
 
             {
                 // Not even for URL remote
-                var fetchCmd = module.PullCmd("https://host.com/repo", "some-branch", false).Arguments;
+                var fetchCmd = module.PullCmd("https://host.com/repo", "some-branch", false, false).Arguments;
                 Assert.AreEqual("pull --progress \"https://host.com/repo\" +some-branch --no-tags", fetchCmd);
             }
 
             {
                 // Pull with rebase
-                var fetchCmd = module.PullCmd("origin", "some-branch", true).Arguments;
+                var fetchCmd = module.PullCmd("origin", "some-branch", true, false).Arguments;
                 Assert.AreEqual("pull --rebase --progress \"origin\" +some-branch --no-tags", fetchCmd);
+            }
+
+            { // Pull with merge fast forward only
+                var fetchCmd = module.PullCmd("origin", "some-branch", false, true).Arguments;
+                Assert.AreEqual("pull --ff-only --progress \"origin\" +some-branch --no-tags", fetchCmd);
             }
         }
 

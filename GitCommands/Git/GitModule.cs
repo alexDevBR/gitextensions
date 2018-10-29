@@ -1620,11 +1620,12 @@ namespace GitCommands
             };
         }
 
-        public ArgumentString PullCmd(string remote, string remoteBranch, bool rebase, bool? fetchTags = false, bool isUnshallow = false, bool prune = false)
+        public ArgumentString PullCmd(string remote, string remoteBranch, bool rebase, bool fastForwardOnly, bool? fetchTags = false, bool isUnshallow = false, bool prune = false)
         {
             return new GitArgumentBuilder("pull")
             {
                 { rebase, "--rebase" },
+                { fastForwardOnly, "--ff-only" },
                 { GitVersion.Current.FetchCanAskForProgress, "--progress" },
                 GetFetchArgs(remote, remoteBranch, null, fetchTags, isUnshallow, prune && !rebase)
             };
