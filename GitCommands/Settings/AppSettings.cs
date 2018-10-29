@@ -683,6 +683,7 @@ namespace GitCommands
         {
             None,
             Merge,
+            MergeFFOnly,
             Rebase,
             Fetch,
             FetchAll,

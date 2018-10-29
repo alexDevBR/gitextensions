@@ -136,6 +136,10 @@ namespace GitUI.CommandsDialogs
                     Merge.Checked = true;
                     Prune.Enabled = true;
                     break;
+                case AppSettings.PullAction.MergeFFOnly:
+                    MergeFFOnly.Checked = true;
+                    Prune.Enabled = true;
+                    break;
                 case AppSettings.PullAction.Rebase:
                     Rebase.Checked = true;
                     break;
@@ -555,7 +559,7 @@ namespace GitUI.CommandsDialogs
                 return new FormRemoteProcess(Module, Module.FetchCmd(source, curRemoteBranch, curLocalBranch, GetTagsArg(), Unshallow.Checked, Prune.Checked));
             }
 
-            Debug.Assert(Merge.Checked || Rebase.Checked, "Merge.Checked || Rebase.Checked");
+            Debug.Assert(Merge.Checked || MergeFFOnly.Checked || Rebase.Checked, "Merge.Checked || MergeFFOnly.Checked || Rebase.Checked");
 
             return new FormRemoteProcess(Module, Module.PullCmd(source, curRemoteBranch, Rebase.Checked, GetTagsArg(), Unshallow.Checked, Prune.Checked))
             {
@@ -826,6 +830,7 @@ namespace GitUI.CommandsDialogs
             AddRemote.Enabled = true;
 
             Merge.Enabled = !IsPullAll();
+            MergeFFOnly.Enabled = !IsPullAll();
             Rebase.Enabled = !IsPullAll();
         }
 
@@ -849,6 +854,7 @@ namespace GitUI.CommandsDialogs
             AddRemote.Enabled = false;
 
             Merge.Enabled = true;
+            MergeFFOnly.Enabled = true;
             Rebase.Enabled = true;
 
             ThreadHelper.JoinableTaskFactory.Run(async () =>
@@ -893,6 +899,25 @@ namespace GitUI.CommandsDialogs
             helpImageDisplayUserControl1.Image1 = DpiUtil.Scale(Images.HelpPullMerge);
             helpImageDisplayUserControl1.Image2 = DpiUtil.Scale(Images.HelpPullMergeFastForward);
             helpImageDisplayUserControl1.IsOnHoverShowImage2 = true;
+            AllTags.Enabled = false;
+            Prune.Enabled = true;
+            if (AllTags.Checked)
+            {
+                ReachableTags.Checked = true;
+            }
+        }
+
+        private void MergeFFOnlyCheckedChanged(object sender, EventArgs e)
+        {
+            if (!MergeFFOnly.Checked)
+            {
+                return;
+            }
+
+            localBranch.Enabled = false;
+            localBranch.Text = _branch;
+            helpImageDisplayUserControl1.Image1 = DpiUtil.Scale(Images.HelpPullMergeFastForward);
+            helpImageDisplayUserControl1.IsOnHoverShowImage2 = false;
             AllTags.Enabled = false;
             Prune.Enabled = true;
             if (AllTags.Checked)
@@ -959,6 +984,7 @@ namespace GitUI.CommandsDialogs
 
             // update merge options radio buttons
             Merge.Enabled = !IsPullAll();
+            MergeFFOnly.Enabled = !IsPullAll();
             Rebase.Enabled = !IsPullAll();
             if (IsPullAll())
             {
