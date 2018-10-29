@@ -125,7 +125,7 @@ namespace GitUI.CommandsDialogs
             // Unshallow
             // 
             this.Unshallow.AutoSize = true;
-            this.Unshallow.Location = new System.Drawing.Point(7, 406);
+            this.Unshallow.Location = new System.Drawing.Point(7, 412);
             this.Unshallow.Margin = new System.Windows.Forms.Padding(7, 2, 2, 2);
             this.Unshallow.Name = "Unshallow";
             this.Unshallow.Size = new System.Drawing.Size(126, 17);
@@ -161,7 +161,7 @@ namespace GitUI.CommandsDialogs
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(674, 498);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(674, 504);
             this.tableLayoutPanel1.TabIndex = 16;
             // 
             // helpImageDisplayUserControl1
@@ -179,7 +179,7 @@ namespace GitUI.CommandsDialogs
             this.helpImageDisplayUserControl1.Location = new System.Drawing.Point(3, 3);
             this.helpImageDisplayUserControl1.MinimumSize = new System.Drawing.Size(40, 83);
             this.helpImageDisplayUserControl1.Name = "helpImageDisplayUserControl1";
-            this.helpImageDisplayUserControl1.Size = new System.Drawing.Size(40, 492);
+            this.helpImageDisplayUserControl1.Size = new System.Drawing.Size(40, 498);
             this.helpImageDisplayUserControl1.TabIndex = 10;
             this.helpImageDisplayUserControl1.UniqueIsExpandedSettingsId = "Pull";
             // 
@@ -189,7 +189,7 @@ namespace GitUI.CommandsDialogs
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(49, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(622, 492);
+            this.panel2.Size = new System.Drawing.Size(622, 498);
             this.panel2.TabIndex = 19;
             // 
             // tableLayoutPanel2
@@ -215,7 +215,7 @@ namespace GitUI.CommandsDialogs
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(622, 492);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(622, 498);
             this.tableLayoutPanel2.TabIndex = 42;
             // 
             // groupBox2
@@ -293,7 +293,7 @@ namespace GitUI.CommandsDialogs
             this.groupBox1.Controls.Add(this.flowLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(3, 169);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(616, 122);
+            this.groupBox1.Size = new System.Drawing.Size(616, 128);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Merge options";
@@ -309,7 +309,7 @@ namespace GitUI.CommandsDialogs
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 17);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(610, 102);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(610, 108);
             this.flowLayoutPanel1.TabIndex = 11;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -413,7 +413,7 @@ namespace GitUI.CommandsDialogs
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.flowLayoutPanel2);
-            this.groupBox4.Location = new System.Drawing.Point(3, 297);
+            this.groupBox4.Location = new System.Drawing.Point(3, 303);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(616, 104);
             this.groupBox4.TabIndex = 15;
@@ -483,7 +483,7 @@ namespace GitUI.CommandsDialogs
             this.tableLayoutPanel3.Controls.Add(this.Stash, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.AutoStash, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 449);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 455);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.tableLayoutPanel3.RowCount = 1;
@@ -527,7 +527,7 @@ namespace GitUI.CommandsDialogs
             // Prune
             // 
             this.Prune.AutoSize = true;
-            this.Prune.Location = new System.Drawing.Point(7, 427);
+            this.Prune.Location = new System.Drawing.Point(7, 433);
             this.Prune.Margin = new System.Windows.Forms.Padding(7, 2, 2, 2);
             this.Prune.Name = "Prune";
             this.Prune.Size = new System.Drawing.Size(138, 17);
@@ -541,7 +541,7 @@ namespace GitUI.CommandsDialogs
             this.AcceptButton = this.Pull;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(674, 498);
+            this.ClientSize = new System.Drawing.Size(674, 504);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
