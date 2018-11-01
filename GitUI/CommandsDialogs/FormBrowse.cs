@@ -69,6 +69,7 @@ namespace GitUI.CommandsDialogs
         private readonly TranslationString _pullFetchAll = new TranslationString("Fetch all");
         private readonly TranslationString _pullFetchPruneAll = new TranslationString("Fetch and prune all");
         private readonly TranslationString _pullMerge = new TranslationString("Pull - merge");
+        private readonly TranslationString _pullMergeFFOnly = new TranslationString("Pull - merge (fast-forward only)");
         private readonly TranslationString _pullRebase = new TranslationString("Pull - rebase");
         private readonly TranslationString _pullOpenDialog = new TranslationString("Open pull dialog");
         private readonly TranslationString _pullFetchPruneAllConfirmation = new TranslationString("Warning! The fetch with prune will remove all the remote-tracking references which no longer exist on remotes. Do you want to proceed?");
@@ -300,6 +301,7 @@ namespace GitUI.CommandsDialogs
 
             pullToolStripMenuItem1.Tag = AppSettings.PullAction.None;
             mergeToolStripMenuItem.Tag = AppSettings.PullAction.Merge;
+            mergeFFOnlyToolStripMenuItem.Tag = AppSettings.PullAction.MergeFFOnly;
             rebaseToolStripMenuItem1.Tag = AppSettings.PullAction.Rebase;
             fetchToolStripMenuItem.Tag = AppSettings.PullAction.Fetch;
             fetchAllToolStripMenuItem.Tag = AppSettings.PullAction.FetchAll;
@@ -759,6 +761,7 @@ namespace GitUI.CommandsDialogs
                 {
                     commitToolStripMenuItem.Enabled = !bareRepository;
                     mergeToolStripMenuItem.Enabled = !bareRepository;
+                    mergeFFOnlyToolStripMenuItem.Enabled = !bareRepository;
                     rebaseToolStripMenuItem1.Enabled = !bareRepository;
                     pullToolStripMenuItem1.Enabled = !bareRepository;
                     cleanupToolStripMenuItem.Enabled = !bareRepository;
@@ -2336,6 +2339,11 @@ namespace GitUI.CommandsDialogs
             DoPull(pullAction: AppSettings.PullAction.Merge, isSilent: true);
         }
 
+        private void mergeFFOnlyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoPull(pullAction: AppSettings.PullAction.MergeFFOnly, isSilent: true);
+        }
+
         private void rebaseToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             DoPull(pullAction: AppSettings.PullAction.Rebase, isSilent: true);
@@ -2414,6 +2422,11 @@ namespace GitUI.CommandsDialogs
                 case AppSettings.PullAction.Merge:
                     toolStripButtonPull.Image = Images.PullMerge;
                     toolStripButtonPull.ToolTipText = _pullMerge.Text;
+                    break;
+
+                case AppSettings.PullAction.MergeFFOnly:
+                    toolStripButtonPull.Image = Images.PullMergeFFOnly;
+                    toolStripButtonPull.ToolTipText = _pullMergeFFOnly.Text;
                     break;
 
                 case AppSettings.PullAction.Rebase:
